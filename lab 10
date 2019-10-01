@@ -1,15 +1,15 @@
 #Powered by XIN 62160246
 def sum_re(n):
     if(n==1):
+        print("i = ",n,"sum = ",n)
         return 1
     else:
-        i = n
-        print("i = %d" % (i))
-        return sum_re(n-1)+n**2
-
+        ll=sum_re(n-1)+n**2
+        print("i = ",n,"sum = ",ll)
+        return ll
 
 n = int(input("Enter (n) : "))
-print("sum = %d"%(sum_re(n)))
+sum_re(n)
 
 def power_re(x,n):
     if(n==0):
