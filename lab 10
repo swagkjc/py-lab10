@@ -1,0 +1,33 @@
+#Powered by XIN 62160246
+def sum_re(n):
+    if(n==1):
+        return 1
+    else:
+        i = n
+        print("i = %d" % (i))
+        return sum_re(n-1)+n**2
+
+
+n = int(input("Enter (n) : "))
+print("sum = %d"%(sum_re(n)))
+
+def power_re(x,n):
+    if(n==0):
+        return 1
+    else:
+        return power_re(x,n-1)*x
+
+n = int(input("Enter N : "))
+x = int(input("Enter X : "))
+print("x power n = ",power_re(x,n))
+
+def bank(x,n,p):
+    if(n==0):
+        return x
+    else:
+        return bank(x,n-1,p)*1.1
+
+x = int(input("Enter money : "))
+n = int(input("Enter number of year : "))
+p = int(input("Enter rate of interest : "))
+print("Money is : %.2f"%(bank(x,n,p)))
