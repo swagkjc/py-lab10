@@ -1,33 +1,41 @@
-#Powered by XIN 62160246
-def sum_re(n):
-    if(n==1):
-        print("i = ",n,"sum = ",n)
+# xin_func
+def func_sumre(x):  # create named > func_sumre
+    if(x==1):                                      
+        print("i : %d sum : %d"%(x,x))
+        return x # return value 1 to> x
+    else:                        
+        value = func_sumre(x-1)+x**2 
+        print("i : %d sum : %d"%(x,value)) 
+        return value 
+
+def func_powerre(x,o):
+    if(o==0):
         return 1
     else:
-        ll=sum_re(n-1)+n**2
-        print("i = ",n,"sum = ",ll)
-        return ll
+        value = func_powerre(x,o-1)*5
+        return value
 
-n = int(input("Enter (n) : "))
-sum_re(n)
-
-def power_re(x,n):
-    if(n==0):
-        return 1
-    else:
-        return power_re(x,n-1)*x
-
-n = int(input("Enter N : "))
-x = int(input("Enter X : "))
-print("x power n = ",power_re(x,n))
-
-def bank(x,n,p):
-    if(n==0):
+def func_profit(x,y,z):
+    if(y==0):
         return x
     else:
-        return bank(x,n-1,p)*1.1
+        value = func_profit(x,y-1,z)*1.1
+        return value
+        
 
-x = int(input("Enter money : "))
-n = int(input("Enter number of year : "))
-p = int(input("Enter rate of interest : "))
-print("Money is : %.2f"%(bank(x,n,p)))
+
+from xin_func import *                             #<<<<<<<<<<<<<<<<< import function from files
+ 
+x = int(input("Enter num(x) : "))
+func_sumre(x)
+
+x = int(input("Enter(x) : "))
+o = int(input("Enter(o) : "))
+value = func_powerre(x,o)
+print("Powerre  : %d"%value)
+
+x = int(input("Enter(x) : "))
+y = int(input("Enter(y) : "))
+z = int(input("Enter(z) : "))
+value = func_profit(x,y,z)
+print("Profit : %.2f"%value)
